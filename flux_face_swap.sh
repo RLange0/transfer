@@ -20,24 +20,29 @@ PIP_PACKAGES=(
 
 NODES=(
     # Label (rgthree)
+    https://github.com/rgthree/rgthree-comfy.git
     # ImageAndMaskPreview
     # in subgraph 'Experteneinstellungen'
+    https://github.com/kijai/ComfyUI-KJNodes.git
     # ImageConcanate
     # in subgraph 'Experteneinstellungen'
     # ImpactGaussianBlurMask
     # in subgraph 'Experteneinstellungen'
+    https://github.com/ltdrdata/ComfyUI-Impact-Pack.git
     # ResizeMask
     # in subgraph 'Experteneinstellungen'
     # Power Lora Loader (rgthree)
     # in subgraph 'Experteneinstellungen'
     # InpaintCropImproved
     # in subgraph 'Experteneinstellungen'
+    https://github.com/lquesada/ComfyUI-Inpaint-CropAndStitch.git
     # InpaintStitchImproved
     # in subgraph 'Experteneinstellungen'
     # TeaCache
     # in subgraph 'Experteneinstellungen'
     # UnetLoaderGGUF
     # in subgraph 'Experteneinstellungen'
+    https://github.com/city96/ComfyUI-GGUF.git
     # DualCLIPLoaderGGUF
     # in subgraph 'Experteneinstellungen'
 )
