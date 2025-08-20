@@ -39,10 +39,11 @@ NODES=(
     # InpaintStitchImproved
     # in subgraph 'Experteneinstellungen'
     # TeaCache
+    https://github.com/welltop-cn/ComfyUI-TeaCache.git
     # in subgraph 'Experteneinstellungen'
     # UnetLoaderGGUF
-    # in subgraph 'Experteneinstellungen'
     https://github.com/city96/ComfyUI-GGUF.git
+    # in subgraph 'Experteneinstellungen'
     # DualCLIPLoaderGGUF
     # in subgraph 'Experteneinstellungen'
 )
