@@ -71,6 +71,9 @@ ESRGAN_MODELS=(
 CONTROLNET_MODELS=(
 )
 
+DIFFUSION_MODELS=(
+)
+
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
 
 function provisioning_start() {
@@ -84,16 +87,21 @@ function provisioning_start() {
     if provisioning_has_valid_hf_token; then
         UNET_MODELS+=("https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors")
         VAE_MODELS+=("https://huggingface.co/black-forest-labs/FLUX.1-Kontext-dev/resolve/main/ae.safetensors")
+        VAE_MODELS+=("https://huggingface.co/black-forest-labs/FLUX.1-Fill-dev/resolve/main/ae.safetensors")
         LORA_MODELS+=("https://huggingface.co/ali-vilab/ACE_Plus/resolve/main/portrait/comfyui_portrait_lora64.safetensors")
+        DIFFUSION_MODELS+=("https://huggingface.co/black-forest-labs/FLUX.1-Fill-dev/resolve/main/flux1-fill-dev.safetensors")
+        DIFFUSION_MODELS+=("https://huggingface.co/black-forest-labs/FLUX.1-Kontext-dev/resolve/main/flux1-kontext-dev.safetensors")
     else
-        # UNET_MODELS+=("https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/flux1-schnell.safetensors")
-        # VAE_MODELS+=("https://huggingface.co/black-forest-labs/FLUX.1-Kontext-dev/resolve/main/ae.safetensors")
-        sed -i 's/flux1-dev\.safetensors/flux1-schnell.safetensors/g' /opt/ComfyUI/web/scripts/defaultGraph.js
+        printf "WARNING: HF_TOKEN is not set or invalid - Licensed models will not be downloaded\n"
     fi
 
     if provisioning_has_valid_civitai_token; then
         UNET_MODELS+=("https://civitai.com/api/download/models/1085456?type=Model&format=SafeTensor&size=full&fp=fp8")
         LORA_MODELS+=("https://civitai.com/api/download/models/981081?type=Model&format=SafeTensor")
+        DIFFUSION_MODELS+=(")"
+    fi
+    else
+        printf "WARNING: CIVITAI_TOKEN is not set or invalid - Licensed models will not be downloaded\n"
     fi
 
     provisioning_print_header
@@ -122,6 +130,9 @@ function provisioning_start() {
     provisioning_get_models \
         "${WORKSPACE}/storage/stable_diffusion/models/esrgan" \
         "${ESRGAN_MODELS[@]}"
+    provisioning_get_models \
+        "${WORKSPACE}/storage/stable_diffusion/models/diffusion_models" \
+        "${DIFFUSION_MODELS[@]}"
     provisioning_print_end
 }
 
