@@ -99,7 +99,6 @@ function provisioning_start() {
         UNET_MODELS+=("https://civitai.com/api/download/models/1085456?type=Model&format=SafeTensor&size=full&fp=fp8")
         LORA_MODELS+=("https://civitai.com/api/download/models/981081?type=Model&format=SafeTensor")
         DIFFUSION_MODELS+=("https://civitai.com/api/download/models/1085456?type=Model&format=SafeTensor&size=full&fp=fp8")
-    fi
     else
         printf "WARNING: CIVITAI_TOKEN is not set or invalid - Licensed models will not be downloaded\n"
     fi
