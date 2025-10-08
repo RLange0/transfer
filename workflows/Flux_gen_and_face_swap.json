@@ -166,7 +166,7 @@
         "Node name for S&R": "LoadImage"
       },
       "widgets_values": [
-        "signal-2025-07-06-122510_002.jpeg",
+        "Face.jpg",
         "image"
       ],
       "color": "#432",
@@ -235,7 +235,7 @@
         "Node name for S&R": "LoadImage"
       },
       "widgets_values": [
-        "clipspace/clipspace-painted-masked-689926.png [input]",
+        "clipspace/clipspace-painted-masked-294570.png [input]",
         "image"
       ],
       "color": "#432",
@@ -384,7 +384,7 @@
         "Node name for S&R": "CLIPTextEncode"
       },
       "widgets_values": [
-        "Retain face as close as possible. High resolution, sharp image."
+        "Retain face."
       ],
       "color": "#232",
       "bgcolor": "#353"
@@ -426,7 +426,6 @@
         },
         {
           "name": "mask",
-          "shape": 7,
           "type": "MASK",
           "link": 729
         }
@@ -447,7 +446,6 @@
           ]
         }
       ],
-      "title": "Experteneinstellungen",
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.3.57"
@@ -849,6 +847,7 @@
               "ver": "0.3.18",
               "Node name for S&R": "ConditioningZeroOut"
             },
+            "widgets_values": [],
             "color": "#322",
             "bgcolor": "#533"
           },
@@ -962,7 +961,8 @@
               "cnr_id": "comfy-core",
               "ver": "0.3.18",
               "Node name for S&R": "MaskToImage"
-            }
+            },
+            "widgets_values": []
           },
           {
             "id": 452,
@@ -1350,7 +1350,8 @@
               "cnr_id": "comfy-core",
               "ver": "0.3.18",
               "Node name for S&R": "VAEDecode"
-            }
+            },
+            "widgets_values": []
           },
           {
             "id": 459,
@@ -1621,7 +1622,8 @@
               "cnr_id": "comfyui-inpaint-cropandstitch",
               "ver": "2.1.7",
               "Node name for S&R": "InpaintStitchImproved"
-            }
+            },
+            "widgets_values": []
           },
           {
             "id": 463,
@@ -2017,7 +2019,7 @@
               "Node name for S&R": "KSampler"
             },
             "widgets_values": [
-              273951304313170,
+              57344031578401,
               "randomize",
               16,
               1,
@@ -2094,7 +2096,7 @@
               },
               {
                 "on": true,
-                "lora": "FLUX.1-Turbo-Alpha.safetensors",
+                "lora": "flux1-turbo-alpha.safetensors",
                 "strength": 1,
                 "strengthTwo": null
               },
@@ -2509,10 +2511,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.9490884246118756,
+      "scale": 1.5663985452583884,
       "offset": [
-        692.2521244192201,
-        1049.509908798636
+        510.1356340826418,
+        980.1070250451304
       ]
     }
   },

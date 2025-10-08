@@ -1,0 +1,16 @@
+# set your HF token first (or inline it below)
+export HF_TOKEN=
+
+# download with Authorization header
+wget --header="Authorization: Bearer $HF_TOKEN" \
+  -O /opt/ComfyUI/models/loras/comfyui_portrait_lora64.safetensors \
+  "https://huggingface.co/ali-vilab/ACE_Plus/resolve/main/portrait/comfyui_portrait_lora64.safetensors"
+
+# set your Civitai token
+export CIVITAI_TOKEN=
+
+# keep server's filename and save into the loras dir
+curl -fL \
+  -H "Authorization: Bearer $CIVITAI_TOKEN" \
+  "https://civitai.com/api/download/models/981081?type=Model&format=SafeTensor" \
+  -o /opt/ComfyUI/models/loras/flux1-turbo-alpha.safetensors
